@@ -21,6 +21,7 @@ export const PostProvider = ({children}) => {
     const createPost = async (post) => {
         try {
             const res = await createPostRequests(post)
+            console.log(res)
             setPosts([...posts, res.data])
             console.log(res)
         }catch (error) {
@@ -37,6 +38,7 @@ export const PostProvider = ({children}) => {
     }
     const getPost = async (id) => {
         const res = await getPostRequest(id)
+        console.log(res)
         return res.data
         
     }
